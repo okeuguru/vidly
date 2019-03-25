@@ -4,10 +4,13 @@ const app = express();
 const morgan = require('morgan')
 const helmet = require('helmet')
 const config = require('config')
-require('./courses')
+const genres = require('./routes/genres')
 
 app.use(express.json());
-app.use('/api/courses', courses)
+app.use('/api/genres', genres)
+app.use('/', (req, res) => {
+    res.send("Welcome")
+})
 
 console.log(`Application: ${config.get('name')}`)
 console.log(`Mail Server: ${config.get('mail.host')}`)

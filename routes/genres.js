@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-
 const genres = [{
     id: 1,
     name: 'Action'
@@ -16,7 +15,7 @@ const genres = [{
 },
 ]
 
-router.get('/api/genres', (req, res) => {
+router.get('/', (req, res) => {
     res.send(genres);
 });
 
